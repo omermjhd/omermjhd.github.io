@@ -8,210 +8,86 @@
 
   <style>
     :root{
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --muted: #5b6472;
-      --border: #e8ebf0;
-      --card: #ffffff;
-      --accent: #0b5bd3;
-      --shadow: 0 8px 24px rgba(0,0,0,0.08);
-      --radius: 14px;
-      --max: 980px;
+      --bg:#ffffff; --text:#15171a; --muted:#5b6472; --border:#e8ebf0;
+      --card:#ffffff; --accent:#0b5bd3; --shadow:0 10px 28px rgba(0,0,0,0.08);
+      --radius:14px; --max:980px;
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
     body{
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.7;
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.7;
     }
-
-    a{ color: var(--accent); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
-
-    .container{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 28px 18px 70px;
-    }
-
-    /* Top nav */
+    a{color:var(--accent); text-decoration:none;}
+    a:hover{text-decoration:underline;}
     .topbar{
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
+      position:sticky; top:0; z-index:20;
+      background:rgba(255,255,255,0.92); backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
     }
     .topbar-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 10px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+      max-width:var(--max); margin:0 auto; padding:10px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
     }
-    .brand{
-      font-weight: 650;
-      letter-spacing: 0.2px;
-    }
-    .nav{
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      font-size: 14px;
-    }
-    .nav a{
-      color: var(--muted);
-      padding: 6px 8px;
-      border-radius: 10px;
-    }
-    .nav a:hover{
-      color: var(--text);
-      background: #f4f6fa;
-      text-decoration: none;
-    }
+    .brand{font-weight:650; letter-spacing:0.2px;}
+    .nav{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end; font-size:14px;}
+    .nav a{color:var(--muted); padding:6px 8px; border-radius:10px;}
+    .nav a:hover{color:var(--text); background:#f4f6fa; text-decoration:none;}
 
-    /* Header card */
+    .container{max-width:var(--max); margin:0 auto; padding:26px 18px 70px;}
+
     .hero{
-      margin-top: 22px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px;
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 22px;
-      align-items: center;
+      margin-top:22px; background:var(--card); border:1px solid var(--border);
+      border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:22px;
+      display:grid; grid-template-columns:180px 1fr; gap:22px; align-items:center;
     }
-    @media (max-width: 720px){
-      .hero{ grid-template-columns: 1fr; text-align: center; }
-    }
+    @media (max-width:720px){ .hero{grid-template-columns:1fr; text-align:center;} }
 
     .avatar{
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--border);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-      background: #f3f5f8;
-      display: block;
-      margin: 0 auto;
+      width:170px; height:170px; border-radius:50%; object-fit:cover;
+      border:1px solid var(--border);
+      box-shadow:0 6px 18px rgba(0,0,0,0.12);
+      background:#f3f5f8; display:block; margin:0 auto;
     }
 
-    h1{
-      margin: 0 0 6px 0;
-      font-size: 32px;
-      line-height: 1.15;
-      letter-spacing: -0.4px;
-    }
-    .subtitle{
-      margin: 0 0 10px 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-    .tagline{
-      margin: 0 0 14px 0;
-      font-size: 15px;
-    }
+    h1{margin:0 0 6px 0; font-size:32px; line-height:1.15; letter-spacing:-0.4px;}
+    h2{margin:0 0 10px 0; font-size:18px; letter-spacing:-0.2px;}
+    .subtitle{margin:0 0 10px 0; color:var(--muted); font-size:15px;}
+    .tagline{margin:0 0 14px 0; font-size:15px;}
 
-    .chips{
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin: 10px 0 0 0;
-    }
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 0 0; justify-content:flex-start;}
+    @media (max-width:720px){ .chips{justify-content:center;} }
     .chip{
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #fbfcfe;
-      color: #2a3240;
+      font-size:12px; padding:6px 10px; border-radius:999px;
+      border:1px solid var(--border); background:#fbfcfe; color:#2a3240;
     }
 
-    .btnrow{
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+    @media (max-width:720px){ .btnrow{justify-content:center;} }
     .btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 9px 12px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: #ffffff;
-      font-size: 14px;
-      text-decoration: none;
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:9px 12px; border-radius:12px; border:1px solid var(--border);
+      color:var(--text); background:#fff; font-size:14px; text-decoration:none;
     }
-    .btn:hover{
-      text-decoration: none;
-      border-color: #d7ddea;
-      background: #f7f9fc;
-    }
-    .btn-primary{
-      background: var(--accent);
-      color: #fff;
-      border-color: rgba(0,0,0,0);
-    }
-    .btn-primary:hover{
-      background: #094fb8;
-    }
+    .btn:hover{ text-decoration:none; border-color:#d7ddea; background:#f7f9fc; }
+    .btn-primary{ background:var(--accent); color:#fff; border-color:transparent; }
+    .btn-primary:hover{ background:#094fb8; }
 
-    /* Section styling */
-    section{
-      margin-top: 28px;
-      padding-top: 6px;
-    }
+    .muted{color:var(--muted);}
+    .small{font-size:14px;}
     .card{
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px 18px;
+      background:var(--card); border:1px solid var(--border);
+      border-radius:var(--radius); padding:18px;
     }
-    h2{
-      margin: 0 0 10px 0;
-      font-size: 18px;
-      letter-spacing: -0.2px;
-    }
-    .muted{ color: var(--muted); }
+    section{margin-top:22px;}
+    .grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+    @media (max-width:860px){ .grid{grid-template-columns:1fr;} }
+    ul{margin:10px 0 0 18px;}
+    li{margin:6px 0;}
 
-    .grid{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    @media (max-width: 860px){
-      .grid{ grid-template-columns: 1fr; }
-    }
-
-    ul{ margin: 10px 0 0 18px; }
-    li{ margin: 6px 0; }
-
-    .pub li{ margin-bottom: 10px; }
-    .small{ font-size: 14px; }
-    .footer{
-      margin-top: 32px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: center;
-    }
-
-    /* Make anchor offsets nicer with sticky nav */
-    .anchor-offset{ scroll-margin-top: 80px; }
+    .footer{margin-top:30px; color:var(--muted); font-size:13px; text-align:center;}
   </style>
 </head>
 
@@ -221,10 +97,9 @@
       <div class="brand">Omer Mujahid</div>
       <nav class="nav" aria-label="Site navigation">
         <a href="#about">About</a>
-        <a href="#interests">Interests</a>
-        <a href="#experience">Experience</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#cv">CV</a>
+        <a href="publications.html">Publications</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -233,16 +108,10 @@
   <main class="container">
     <!-- HERO -->
     <header class="hero">
-      <!-- Put your photo file in the same folder as index.html -->
-      <!-- Recommended filename: profile.jpg -->
-      <img class="avatar" src="omer_pic.jpg" alt="Portrait of Omer Mujahid" />
-
+      <img class="avatar" src="profile.jpg" alt="Portrait of Omer Mujahid" />
       <div>
         <h1>Omer Mujahid</h1>
-        <p class="subtitle">
-          Associate Researcher · MICELAB · University of Girona (UdG)
-        </p>
-
+        <p class="subtitle">Associate Researcher · MICELAB · University of Girona (UdG)</p>
         <p class="tagline">
           I work on <strong>digital twins</strong> and <strong>generative AI</strong> for personalized healthcare,
           with a focus on <strong>Type 1 Diabetes</strong> simulation, prediction, and synthetic data generation.
@@ -257,123 +126,108 @@
         </div>
 
         <div class="btnrow" aria-label="Quick links">
-          <!-- Put your CV PDF in the same folder as index.html -->
-          <!-- Recommended filename: cv.pdf -->
-          <a class="btn btn-primary" href="CV_Omer.pdf">Download CV</a>
+          <a class="btn btn-primary" href="cv.pdf">Download CV</a>
+          <a class="btn" href="publications.html">Publications</a>
           <a class="btn" href="https://orcid.org/0000-0001-9694-9621" target="_blank" rel="noopener">ORCID</a>
           <a class="btn" href="https://www.linkedin.com/in/omer-mujahid" target="_blank" rel="noopener">LinkedIn</a>
-
-          <!-- Optional: add your Google Scholar link if you have it -->
-          <!-- <a class="btn" href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener">Google Scholar</a> -->
         </div>
-
-        <p class="muted small" style="margin-top:12px;">
-          Email: <a href="mailto:omer.mujahid@udg.edu">omer.mujahid@udg.edu</a>
-        </p>
       </div>
     </header>
 
     <!-- ABOUT -->
-    <section id="about" class="anchor-offset">
+    <section id="about">
       <div class="card">
         <h2>About</h2>
         <p class="small">
-          I am an Associate Researcher at the University of Girona. I lead research activities on the
-          <strong>Personal Digital Twin</strong> initiative and contribute to grant applications, academic supervision,
-          and translational work toward real-world deployment. My PhD focused on <em>data-driven generative models</em>
-          for Type 1 Diabetes simulation (<em>Cum Laude</em>).
+          I am an Associate Researcher at the University of Girona (MICELAB). I lead research activities on the
+          <strong>Personal Digital Twin</strong> initiative and contribute to translational work toward real-world deployment.
+          My PhD focused on <em>data-driven generative models</em> for Type 1 Diabetes simulation (<em>Cum Laude</em>).
         </p>
 
         <div class="grid" style="margin-top:14px;">
           <div>
             <h2 style="font-size:16px; margin-bottom:8px;">Education</h2>
             <ul class="small">
-              <li><strong>PhD</strong>, University of Girona (2020–2023) — <em>Data-driven models for T1D using generative deep learning</em> (Cum Laude)</li>
+              <li><strong>PhD</strong>, University of Girona (2020–2023) — Data-driven models for T1D using generative deep learning (Cum Laude)</li>
               <li><strong>MSc Electrical Engineering</strong>, CECOS University (2014–2017)</li>
               <li><strong>BSc Electrical Engineering</strong>, CECOS University (2009–2013)</li>
             </ul>
           </div>
 
           <div>
-            <h2 style="font-size:16px; margin-bottom:8px;">Technical Expertise</h2>
+            <h2 style="font-size:16px; margin-bottom:8px;">Current Focus</h2>
             <ul class="small">
-              <li>Generative deep learning (VAE/GAN and related methods)</li>
-              <li>Modeling & simulation of physiological systems</li>
-              <li>Machine learning for healthcare</li>
-              <li>Digital twins</li>
-              <li>Retrieval-Augmented Generation (RAG)</li>
-              <li>FPGA / reconfigurable computing (earlier work)</li>
+              <li>Digital twins for therapy adjustment in diabetes</li>
+              <li>Generative simulation of glucose dynamics</li>
+              <li>Synthetic data for improving clinical ML models</li>
+              <li>RAG-driven tooling for research and deployment workflows</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- INTERESTS -->
-    <section id="interests" class="anchor-offset">
+    <!-- RESEARCH -->
+    <section id="research">
       <div class="card">
-        <h2>Research Interests</h2>
+        <h2>Research</h2>
         <ul class="small">
           <li>Data-based digital twins for diabetes and metabolic health</li>
-          <li>Generative models for physiological time series (conditional synthesis, simulation, constraints)</li>
+          <li>Generative models for physiological time series (conditional synthesis, plausibility constraints)</li>
+          <li>Hypoglycemia detection/prediction; HRV–CGM integration</li>
           <li>Synthetic data augmentation for robust clinical AI</li>
-          <li>Hypoglycemia detection and prediction; HRV–CGM integration</li>
-          <li>Applied RAG for clinical/technical decision support</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="anchor-offset">
-      <div class="card">
-        <h2>Experience</h2>
-        <ul class="small">
-          <li><strong>Associate Researcher</strong>, University of Girona (Mar 2025–Present) — Lead researcher on the Personal Digital Twin project; spinoff formation; grant applications; supervision.</li>
-          <li><strong>Postdoctoral Researcher</strong>, University of Girona (Sep 2023–Mar 2025) — Improved the lab’s T1D simulator; spinoff formation; grants; supervision.</li>
-          <li><strong>Research Fellow</strong>, RAUN / WHO Ukraine (May 2021–Dec 2021) — COVID-19 contact tracing case study (Chernivtsi region).</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="anchor-offset">
-      <div class="card">
-        <h2>Selected Publications</h2>
-        <ul class="pub small">
-          <li><strong>Generative Deep Learning for the Development of a Type 1 Diabetes Simulator</strong> — Communications Medicine, 2024.</li>
-          <li><strong>Conditional Synthesis of Blood Glucose Profiles for T1D Patients Using Deep Generative Models</strong> — Mathematics, 2022.</li>
-          <li><strong>Generative Artificial Intelligence in Diabetes Healthcare</strong> — iScience, 2025.</li>
-          <li><strong>Machine Learning Techniques for Hypoglycemia Detection: Trends and Challenges</strong> — Sensors, 2021.</li>
-          <li><strong>Including Aerobic Exercise into Data-Based Virtual Twins for Glycemic Simulation</strong> — Journal of Diabetes Science and Technology, accepted, 2025.</li>
         </ul>
 
         <p class="muted small" style="margin-top:10px;">
-          Tip: add a Google Scholar link above if you want an always-updated full list.
+          See the dedicated <a href="publications.html">publications page</a> for the full list.
         </p>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="anchor-offset">
+    <!-- CV -->
+    <section id="cv">
       <div class="card">
-        <h2>Projects & Leadership</h2>
-        <ul class="small">
-          <li><strong>Personal Digital Twin</strong> — “A virtual human twin for therapy adjustment in people with diabetes” (Indústria del Coneixement 2024).</li>
-          <li>Generative simulators for Type 1 Diabetes glucose dynamics (conditional synthesis, plausibility constraints, evaluation with glycemic metrics).</li>
-          <li>Training and dissemination: talks/workshops on synthetic data and digital twins (EMBC, summer school initiatives).</li>
-        </ul>
+        <h2>Curriculum Vitae</h2>
+        <p class="small">
+          A downloadable PDF version of my CV is available here:
+          <a href="cv.pdf"><strong>CV_Omer.pdf</strong></a>.
+        </p>
+
+        <div class="grid" style="margin-top:12px;">
+          <div>
+            <h2 style="font-size:16px; margin-bottom:8px;">Appointments</h2>
+            <ul class="small">
+              <li><strong>Associate Researcher</strong>, University of Girona (Mar 2025–Present)</li>
+              <li><strong>Postdoctoral Researcher</strong>, University of Girona (Sep 2023–Mar 2025)</li>
+              <li><strong>Research Fellow</strong>, RAUN / WHO Ukraine (May 2021–Dec 2021)</li>
+            </ul>
+          </div>
+          <div>
+            <h2 style="font-size:16px; margin-bottom:8px;">Awards & Funding</h2>
+            <ul class="small">
+              <li>FI Predoctoral Fellowship (Generalitat de Catalunya)</li>
+              <li>Indústria del Coneixement 2024 — Personal Digital Twin (PI/lead researcher)</li>
+              <li>Best Lab Engineer Award (CECOS University)</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="muted small" style="margin-top:10px;">
+          Tip: rename your uploaded file to <code>cv.pdf</code> to avoid 404 issues from capitalization/spaces.
+        </p>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="anchor-offset">
+    <!-- CONTACT (single, minimal) -->
+    <section id="contact">
       <div class="card">
         <h2>Contact</h2>
         <p class="small" style="margin:0;">
-          <strong>Email:</strong> <a href="mailto:omer.mujahid@udg.edu">omer.mujahid@udg.edu</a><br />
-          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/omer-mujahid" target="_blank" rel="noopener">linkedin.com/in/omer-mujahid</a><br />
-          <strong>Mobile:</strong> +34 632671443
-          <strong>Office:</strong> Parc de Recerca i Innovació de la UdG – Narcís Monturiol Building, Office P2-A11, 17003 Girona, Spain
+          <a href="mailto:omer.mujahid@udg.edu">omer.mujahid@udg.edu</a> ·
+          <a href="https://orcid.org/0000-0001-9694-9621" target="_blank" rel="noopener">ORCID</a> ·
+          <a href="https://www.linkedin.com/in/omer-mujahid" target="_blank" rel="noopener">LinkedIn</a><br>
+          Mobile: +34 632671443</a><br>
+          Office: Parc de Recerca i Innovació de la UdG – Narcís Monturiol Building, Office P2-A11, 17003 Girona, Spain
         </p>
       </div>
     </section>
@@ -384,7 +238,6 @@
   </main>
 
   <script>
-    // Keeps the footer year current.
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
